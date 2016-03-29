@@ -30,35 +30,35 @@ while [ $OPCJA != 8 ]; do
   case "$OPCJA" in 
     1)  echo -n "Podaj nazwe pliku: "
         read NAZWA
-	;;
+    ;;
     2)  echo -n "Podaj nazwe katalogu: "
-	read KATALOG
-	;;
+	    read KATALOG
+    ;;
     3)  echo -n "Czy plik jest pusty? (T - tak, N - nie, B - tak lub nie): "
-	read PUSTY
-	while [[ "$PUSTY" != "T" && "$PUSTY" != "N"  && "$PUSTY" != "B" ]]; do
-	  echo -n "Sprobuj ponownie: "
-	  read PUSTY
-	  if [ $PUSTY = "t" ]; then
-		PUSTY="T"
-	  fi
-	  if [ $PUSTY = "n" ]; then
-		PUSTY="N"
-	  fi
-	  if [ $PUSTY = "b" ]; then
-		PUSTY="B"
-	  fi
-	done
-	;;
+        read PUSTY
+        while [[ "$PUSTY" != "T" && "$PUSTY" != "N"  && "$PUSTY" != "B" ]]; do
+          echo -n "Sprobuj ponownie: "
+          read PUSTY
+          if [ $PUSTY = "t" ]; then
+            PUSTY="T"
+          fi
+          if [ $PUSTY = "n" ]; then
+            PUSTY="N"
+          fi
+          if [ $PUSTY = "b" ]; then
+            PUSTY="B"
+          fi
+        done
+    ;;
     4)  echo -n "Ilosc dni: "
         read ZMIENIONY
-	;;
+    ;;
     5)  echo -n "Wlasciciel: "
 	    read WLASCICIEL
-	;;
+    ;;
     6)  echo -n "Zawartość: "
 	    read ZAWARTOSC
-	;;
+    ;;
     7)  echo "Znaleziono: "
         if [ ! -z $WLASCICIEL ]; then
             OWNERCMD="-user $WLASCICIEL"
