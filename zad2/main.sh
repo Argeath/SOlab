@@ -67,7 +67,7 @@ while [ $OPCJA != 8 ]; do
         fi
 
         if [ $ZMIENIONY -gt 0 ]; then
-            DNICMD="-atime $ZMIENIONY"
+            DNICMD="-atime -$ZMIENIONY"
         else
             DNICMD=""
         fi
@@ -79,12 +79,6 @@ while [ $OPCJA != 8 ]; do
         else
             EMPTYCMD=""
         fi
-
-        #if [ ! -z $ZAWARTOSC ]; then
-        #    CONTENTCMD="-type f -exec grep -l \"$ZAWARTOSC\" {} \\;"
-        #else
-        #    CONTENTCMD=""
-        #fi
 
         RET=$(find $KATALOG -maxdepth 1 -iname "*$NAZWA*" $OWNERCMD $DNICMD $EMPTYCMD | sed "s#^$KATALOG[/]*# #")
         if [ ! -z $ZAWARTOSC ]; then
