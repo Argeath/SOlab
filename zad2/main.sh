@@ -92,7 +92,7 @@ while [ $OPCJA != 8 ]; do
         else
             echo $RET
         fi
-	;;
-	*) OPCJA=0
-  esac	    
+    ;;
+    *) OPCJA=0
+  esac
 done
